@@ -15,3 +15,4 @@ G:\Mi unidad\MISION TIC 2022\CICLO 3\DESARROLLO DE SOFTWARE\ProyectoCiclo3.App\P
 G:\Mi unidad\MISION TIC 2022\CICLO 3\DESARROLLO DE SOFTWARE\ProyectoCiclo3.App\ProyectoCiclo3.App.Dominio\obj\Debug\netstandard2.0\ProyectoCiclo3.App.Dominio.csproj.CoreCompileInputs.cache
 G:\Mi unidad\MISION TIC 2022\CICLO 3\DESARROLLO DE SOFTWARE\ProyectoCiclo3.App\ProyectoCiclo3.App.Dominio\obj\Debug\netstandard2.0\ProyectoCiclo3.App.Dominio.dll
 G:\Mi unidad\MISION TIC 2022\CICLO 3\DESARROLLO DE SOFTWARE\ProyectoCiclo3.App\ProyectoCiclo3.App.Dominio\obj\Debug\netstandard2.0\ProyectoCiclo3.App.Dominio.pdb
+G:\Mi unidad\MISION TIC 2022\CICLO 3\DESARROLLO DE SOFTWARE\ProyectoCiclo3.App\ProyectoCiclo3.App.Dominio\obj\Debug\netstandard2.0\ProyectoCiclo3.App.Dominio.csprojAssemblyReference.cache

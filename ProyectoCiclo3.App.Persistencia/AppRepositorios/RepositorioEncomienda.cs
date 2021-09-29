@@ -13,9 +13,9 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         {
             encomiendas= new List<Encomienda>()
             {
-                new Encomienda{id=1,descripcion="Sobre con documentos",tipo= "Documentos",peso= 10,presentacion= "sobre"},
-                new Encomienda{id=2,descripcion="XXXX",tipo= "XXXX",peso= 20,presentacion= "XXXX"},
-                new Encomienda{id=3,descripcion="XXXX",tipo= "XXXX",peso= 30,presentacion= "XXXX"}
+                new Encomienda{id=1,descripcion="Sobre tamaño carta",tipo= "Documentos",peso= 10,presentacion= "Sobre"},
+                new Encomienda{id=2,descripcion="Caja mediana",tipo= "Alimentos",peso= 8000,presentacion= "Caja"},
+                new Encomienda{id=3,descripcion="Caja grande",tipo= "Electrodoméstico",peso= 3000,presentacion= "Caja"}
             };
         }
  

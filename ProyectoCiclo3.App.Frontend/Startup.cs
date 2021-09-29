@@ -27,6 +27,7 @@ namespace ProyectoCiclo3.App.Frontend
             services.AddRazorPages();
             services.AddSingleton<RepositorioUsuario, RepositorioUsuario>();
             services.AddSingleton<RepositorioEncomienda, RepositorioEncomienda>();
+            services.AddSingleton<RepositorioServicio, RepositorioServicio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

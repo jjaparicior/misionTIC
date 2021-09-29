@@ -9,7 +9,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Descripción</th>
-      <th scope="col">Peso</th>
+      <th scope="col">Peso (en gramos)</th>
       <th scope="col">Tipo</th>
       <th scope="col">Presentación</th>
     </tr>
@@ -24,7 +24,7 @@
             <td>@encomienda.presentacion</td>
             <td>
               <a class="btn btn-info" asp-page="./Details" asp-route-encomiendaId="@encomienda.id"><i class="fas fa-adjust"></i>Ver</a>
-              <a class="btn btn-info" href="">Editar</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-encomiendaId="@encomienda.id">Editar</a>
               <a class="btn btn-danger" href="">Eliminar</a>
               </td>
         </tr>

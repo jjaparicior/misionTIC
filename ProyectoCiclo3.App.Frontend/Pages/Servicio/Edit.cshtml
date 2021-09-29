@@ -1,0 +1,24 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.EditServicioModel
+@{
+    var servicio = Model.Servicio;
+}
+
+  <div class="text-center">
+    <form method="post">
+      <label for="id" class="form-label">Id:</label>
+      <input type="number" class="form-control" id="id" name="id" placeholder="Id" asp-for="@servicio.id">
+      <label for="origen" class="form-label">Origen:</label>
+      <input type="text" class="form-control" id="origen" name="origen" placeholder="Origen" asp-for="@servicio.origen">
+      <label for="destino" class="form-label">Destino:</label>
+      <input type="text" class="form-control" id="destino" name="destino" placeholder="Destino" asp-for="@servicio.destino">
+      <label for="fecha" class="form-label">Fecha:</label>
+      <input type="datetime" class="form-control" id="fecha" name="fecha" placeholder="Fecha" asp-for="@servicio.fecha">
+      <label for="hora" class="form-label">Hora:</label>
+      <input type="text" class="form-control" id="hora" name="hora" placeholder="Hora" asp-for="@servicio.hora">
+      <label for="encomienda" class="form-label">Encomienda:</label>
+      <input type="number" class="form-control" id="encomienda" name="encomienda" placeholder="Encomienda" asp-for="@servicio.encomienda">
+      <hr>
+<button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+  </div>
