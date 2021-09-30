@@ -12,7 +12,8 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     public class EditEncomiendaModel : PageModel
     {
        private readonly RepositorioEncomienda repositorioEncomienda;
-              public Encomienda Encomienda {get;set;}
+       [BindProperty]
+        public Encomienda Encomienda {get;set;}
  
         public EditEncomiendaModel(RepositorioEncomienda repositorioEncomienda)
        {
@@ -24,6 +25,19 @@ namespace ProyectoCiclo3.App.Frontend.Pages
                 Encomienda=repositorioEncomienda.GetEncomiendaWithId(encomiendaId);
                 return Page();
  
+        }
+
+        public IActionResult OnPost()
+        {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
+            if(Encomienda.id>0)
+            {
+            Encomienda = repositorioEncomienda.Update(Encomienda);
+            }
+            return RedirectToPage("./List");
         }
     }
 }

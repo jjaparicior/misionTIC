@@ -12,7 +12,8 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     public class EditServicioModel : PageModel
     {
        private readonly RepositorioServicio repositorioServicio;
-              public Servicio Servicio {get;set;}
+       [BindProperty]
+        public Servicio Servicio {get;set;}
  
         public EditServicioModel(RepositorioServicio repositorioServicio)
        {
@@ -25,5 +26,19 @@ namespace ProyectoCiclo3.App.Frontend.Pages
                 return Page();
  
         }
+
+        public IActionResult OnPost()
+        {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
+            if(Servicio.id>0)
+            {
+            Servicio = repositorioServicio.Update(Servicio);
+            }
+            return RedirectToPage("./List");
+        }
+
     }
 }

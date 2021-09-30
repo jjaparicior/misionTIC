@@ -27,5 +27,16 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         public Encomienda GetEncomiendaWithId(int id){
             return encomiendas.SingleOrDefault(b => b.id == id);
         }
+
+        public Encomienda Update(Encomienda newEncomienda){
+            var encomienda= encomiendas.SingleOrDefault(b => b.id == newEncomienda.id);
+            if(encomienda != null){
+                encomienda.descripcion = newEncomienda.descripcion;
+                encomienda.peso = newEncomienda.peso;
+                encomienda.tipo = newEncomienda.tipo;
+                encomienda.presentacion = newEncomienda.presentacion;
+            }
+        return encomienda;
+        }
     }
 }
