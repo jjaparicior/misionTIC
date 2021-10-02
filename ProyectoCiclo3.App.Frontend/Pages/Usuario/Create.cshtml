@@ -4,23 +4,20 @@
 }
 <div class="text-center">
     <form method="post">
-      <label for="id" class="form-label">Id:</label>
-      <input type="number" class="form-control" id="id" name="id" placeholder="Id">
-
       <label for="nombre" class="form-label">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" asp-for="Usuario.nombre" required>
 
       <label for="apellidos" class="form-label">Apellidos:</label>
-      <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos">
+      <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" asp-for="Usuario.apellidos" required>
 
       <label for="direccion" class="form-label">Dirección:</label>
-      <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
+      <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" asp-for="Usuario.direccion" required>
 
       <label for="telefono" class="form-label">Telefono:</label>
-      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" asp-for="Usuario.telefono" required>
 
       <label for="ciudad" class="form-label">Ciudad:</label>
-      <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad">
+      <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" asp-for="Usuario.ciudad" required>
 
       <hr>
       <button type="submit" class="btn btn-success">Enviar</button>
