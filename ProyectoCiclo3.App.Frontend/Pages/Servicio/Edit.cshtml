@@ -8,11 +8,30 @@
     <form method="post">
       @* <label for="id" class="form-label">Id:</label> *@
       <input type="number" class="form-control d-none" id="id" name="id" placeholder="Id" asp-for="@servicio.id">
+
       <label for="origen" class="form-label">Origen:</label>
-      <input type="text" class="form-control" id="origen" name="origen" placeholder="Origen" asp-for="@servicio.origen">
+
+      <select asp-for="@servicio.origen" class="form-control">
+        <option value="">-</option>
+        @foreach (var usuario in Model.Usuarios)
+        {
+        <option value="@usuario.id">@usuario.nombre @usuario.apellidos - @usuario.ciudad</option>
+        }
+      </select>
+
+      @* <input type="text" class="form-control" id="origen" name="origen" placeholder="Origen" asp-for="@servicio.origen"> *@
 
       <label for="destino" class="form-label">Destino:</label>
-      <input type="text" class="form-control" id="destino" name="destino" placeholder="Destino" asp-for="@servicio.destino">
+
+      <select asp-for="@servicio.destino" class="form-control">
+        <option value="">-</option>
+        @foreach (var usuario in Model.Usuarios)
+        {
+          <option value="@usuario.id">@usuario.nombre @usuario.apellidos - @usuario.ciudad</option>
+        }
+      </select>
+
+      @* <input type="text" class="form-control" id="destino" name="destino" placeholder="Destino" asp-for="@servicio.destino"> *@
 
       <label for="fecha" class="form-label">Fecha:</label>
       <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha" asp-for="@servicio.fecha">
@@ -21,7 +40,16 @@
       <input type="time" class="form-control" id="hora" name="hora" placeholder="Hora" asp-for="@servicio.hora">
       
       <label for="encomienda" class="form-label">Encomienda:</label>
-      <input type="number" class="form-control" id="encomienda" name="encomienda" placeholder="Encomienda" asp-for="@servicio.encomienda">
+
+      <select asp-for="@servicio.encomienda" class="form-control">
+        <option value="">-</option>
+        @foreach (var encomienda in Model.Encomiendas)
+        {
+          <option value="@encomienda.id">@encomienda.descripcion</option>
+        }
+      </select>
+
+      @* <input type="number" class="form-control" id="encomienda" name="encomienda" placeholder="Encomienda" asp-for="@servicio.encomienda"> *@
       <hr>
 <button type="submit" class="btn btn-success">Enviar</button>
     </form>

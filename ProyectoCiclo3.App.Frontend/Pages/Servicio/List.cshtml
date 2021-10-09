@@ -7,6 +7,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">#</th>
       <th scope="col">Origen</th>
       <th scope="col">Destino</th>
       <th scope="col">Fecha</th>
@@ -17,6 +18,7 @@
     @foreach (var servicio in Model.Servicio)
     {
         <tr>
+            <td>@servicio.id</td>
             <td>@servicio.origen</td>
             <td>@servicio.destino</td>
             <td>@servicio.fecha</td>

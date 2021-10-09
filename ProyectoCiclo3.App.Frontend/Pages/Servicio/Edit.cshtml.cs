@@ -11,20 +11,30 @@ namespace ProyectoCiclo3.App.Frontend.Pages
 {
     public class EditServicioModel : PageModel
     {
-       private readonly RepositorioServicio repositorioServicio;
+        private readonly RepositorioServicio repositorioServicio;
+        private readonly RepositorioUsuario repositorioUsuario;
+        private readonly RepositorioEncomienda repositorioEncomienda;
+
+        public IEnumerable<Usuario> Usuarios {get;set;}
+        public IEnumerable<Encomienda> Encomiendas {get;set;}
+
        [BindProperty]
         public Servicio Servicio {get;set;}
  
-        public EditServicioModel(RepositorioServicio repositorioServicio)
+        public EditServicioModel(RepositorioServicio repositorioServicio, RepositorioUsuario repositorioUsuario, RepositorioEncomienda repositorioEncomienda)
+        
        {
             this.repositorioServicio=repositorioServicio;
+            this.repositorioUsuario=repositorioUsuario;
+            this.repositorioEncomienda=repositorioEncomienda;
        }
- 
+
         public IActionResult OnGet(int servicioId)
         {
                 Servicio=repositorioServicio.GetServicioWithId(servicioId);
-                return Page();
- 
+                Usuarios=repositorioUsuario.GetAll();
+                Encomiendas=repositorioEncomienda.GetAll();
+        return Page();
         }
 
         public IActionResult OnPost()

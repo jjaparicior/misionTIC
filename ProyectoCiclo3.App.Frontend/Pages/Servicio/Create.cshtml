@@ -5,24 +5,29 @@
 
 <div class="text-center">
   <form method="post">
+    
   <label for="origen" class="form-label">Origen:</label>
-  <select asp-for="Servicio.origen" class="form-control">
+
+  <select asp-for="Servicio.origen" required class="form-control">
     <option value="">-</option>
     @foreach (var usuario in Model.Usuarios)
     {
       <option value="@usuario.id">@usuario.nombre @usuario.apellidos - @usuario.ciudad</option>
     }
   </select>
+
   @* <input type="text" class="form-control" id="origen" placeholder="Origen" asp-for="Servicio.origen" required> *@
 
   <label for="destino" class="form-label">Destino:</label>
-  <select asp-for="Servicio.destino" class="form-control">
+
+  <select asp-for="Servicio.destino" required class="form-control">
     <option value="">-</option>
     @foreach (var usuario in Model.Usuarios)
     {
       <option value="@usuario.id">@usuario.nombre @usuario.apellidos - @usuario.ciudad</option>
     }
   </select>
+
   @* <input type="text" class="form-control" id="destino" placeholder="Destino" asp-for="Servicio.destino" required> *@
 
   <label for="fecha" class="form-label">Fecha:</label>
@@ -32,7 +37,8 @@
   <input type="time" class="form-control" id="hora" placeholder="Hora" asp-for="Servicio.hora" required>
   
   <label for="encomienda" class="form-label">Encomienda:</label>
-    <select asp-for="Servicio.encomienda" class="form-control">
+
+    <select asp-for="Servicio.encomienda" required class="form-control">
     <option value="">-</option>
     @foreach (var encomienda in Model.Encomiendas)
     {
