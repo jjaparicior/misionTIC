@@ -6,8 +6,8 @@
 
   <div class="text-center">
     <form method="post">
-      <label for="id" class="form-label">Id:</label>
-      <input type="number" class="form-control" id="id" name="id" placeholder="Id" asp-for="@encomienda.id">
+      @* <label for="id" class="form-label">Id:</label> *@
+      <input type="number" class="form-control d-none" id="id" name="id" placeholder="Id" asp-for="@encomienda.id">
       <label for="descripcion" class="form-label">Descripción:</label>
       <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" asp-for="@encomienda.descripcion">
       <label for="peso" class="form-label">Peso (en gramos):</label>

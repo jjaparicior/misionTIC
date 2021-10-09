@@ -8,35 +8,45 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
     public class RepositorioEncomienda
     {
         List<Encomienda> encomiendas;
- 
-    public RepositorioEncomienda()
-        {
-            encomiendas= new List<Encomienda>()
-            {
-                new Encomienda{id=1,descripcion="Sobre tamaño carta",tipo= "Documentos",peso= 10,presentacion= "Sobre"},
-                new Encomienda{id=2,descripcion="Caja mediana",tipo= "Alimentos",peso= 8000,presentacion= "Caja"},
-                new Encomienda{id=3,descripcion="Caja grande",tipo= "Electrodoméstico",peso= 3000,presentacion= "Caja"}
-            };
-        }
- 
+        private readonly AppContext _appContext = new AppContext();
+
         public IEnumerable<Encomienda> GetAll()
         {
-            return encomiendas;
+            return _appContext.Encomiendas;
+        }
+
+        public Encomienda GetEncomiendaWithId(int id){
+            return _appContext.Encomiendas.Find(id);
         }
  
-        public Encomienda GetEncomiendaWithId(int id){
-            return encomiendas.SingleOrDefault(b => b.id == id);
+        public Encomienda Create(Encomienda newEncomienda)
+        {
+            var addEncomienda = _appContext.Encomiendas.Add(newEncomienda);
+            _appContext.SaveChanges();
+            return addEncomienda.Entity;
         }
 
         public Encomienda Update(Encomienda newEncomienda){
-            var encomienda= encomiendas.SingleOrDefault(b => b.id == newEncomienda.id);
+            var encomienda= _appContext.Encomiendas.Find(newEncomienda.id);
+
             if(encomienda != null){
                 encomienda.descripcion = newEncomienda.descripcion;
                 encomienda.peso = newEncomienda.peso;
                 encomienda.tipo = newEncomienda.tipo;
                 encomienda.presentacion = newEncomienda.presentacion;
+                //Guardar en base de datos
+                _appContext.SaveChanges();
             }
         return encomienda;
+        }
+
+        public void Delete(int id)
+        {
+        var user= _appContext.Encomiendas.Find(id);
+        if (user == null)
+            return;
+        _appContext.Encomiendas.Remove(user);
+        _appContext.SaveChanges();
         }
     }
 }

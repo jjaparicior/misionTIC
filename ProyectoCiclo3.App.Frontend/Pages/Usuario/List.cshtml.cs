@@ -30,7 +30,7 @@ namespace ProyectoCiclo3.App.Frontend.Pages
     {
         if(User.id>0)
         {
-        User = repositorioUsuario.Delete(User.id);
+            repositorioUsuario.Delete(User.id);
         }
         return RedirectToPage("./List");
     }

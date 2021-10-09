@@ -21,12 +21,7 @@ namespace ProyectoCiclo3.App.Frontend.Pages
             this.repositorioUsuario=repositorioUsuario;
        }
  
-        public void OnGet()
-        {
- 
-        }
- 
-        public IActionResult OnPost()
+       public IActionResult OnPost()
         {
             if(!ModelState.IsValid)
             {
