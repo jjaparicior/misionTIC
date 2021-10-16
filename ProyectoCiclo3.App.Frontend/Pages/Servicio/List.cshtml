@@ -19,11 +19,11 @@
     {
         <tr>
             <td>@servicio.id</td>
-            <td>@servicio.origen</td>
-            <td>@servicio.destino</td>
+            <td>@servicio.origen.nombre @servicio.origen.apellidos</td>
+            <td>@servicio.destino.nombre @servicio.destino.apellidos</td>
             <td>@servicio.fecha</td>
             <td>@servicio.hora</td>
-            <td>@servicio.encomienda</td>
+            <td>@servicio.encomienda.descripcion</td>
             <td>
               <a class="btn btn-info" asp-page="./Details" asp-route-servicioId="@servicio.id"><i class="fas fa-adjust"></i>Ver</a>
               <a class="btn btn-info" asp-page="./Edit" asp-route-servicioId="@servicio.id">Editar</a>

@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProyectoCiclo3.App.Persistencia.AppRepositorios;
 using ProyectoCiclo3.App.Dominio;
+using Microsoft.AspNetCore.Authorization;
  
 namespace ProyectoCiclo3.App.Frontend.Pages
 {
+    [Authorize]
     public class FormServicioModel : PageModel
     {
  
@@ -35,13 +37,13 @@ namespace ProyectoCiclo3.App.Frontend.Pages
         Encomiendas=repositorioEncomienda.GetAll();
     }
  
-        public IActionResult OnPost()
+        public IActionResult OnPost(int origen, int destino, string fecha, string hora, int encomienda)
         {
             if(!ModelState.IsValid)
             {
                 return Page();
             }            
-            Servicio = repositorioServicio.Create(Servicio);            
+            Servicio = repositorioServicio.Create(origen, destino, fecha, hora, encomienda);
             return RedirectToPage("./List");
         }
     }

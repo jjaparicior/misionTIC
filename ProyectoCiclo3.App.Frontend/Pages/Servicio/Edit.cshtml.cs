@@ -37,7 +37,7 @@ namespace ProyectoCiclo3.App.Frontend.Pages
         return Page();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(int origen, int destino, string fecha, string hora, int encomienda)
         {
             if(!ModelState.IsValid)
             {

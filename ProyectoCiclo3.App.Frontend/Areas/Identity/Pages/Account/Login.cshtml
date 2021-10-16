@@ -2,7 +2,7 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Iniciar Sesión";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -10,7 +10,7 @@
     <div class="col-md-4">
         <section>
             <form id="account" method="post">
-                <h4>Use a local account to log in.</h4>
+                <h4>Ingrese su nombre de Usuario y Contraseña.</h4>
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
@@ -50,15 +50,16 @@
     </div>
     <div class="col-md-6 col-md-offset-2">
         <section>
-            <h4>Use another service to log in.</h4>
+            <h4>Bienvenido a Amazon Services</h4>
             <hr />
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
                     <div>
                         <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
+                            <img style="height: 400px" alt="Responsive image" class="img-fluid" src="https://yt3.ggpht.com/V9v7ldiYlhX26Di6THQ2o5C4C1hh-Ob79caJUy4Y5nmg6odKgPtR6l7R6ozs0LCQd9VVPB5sFQ=s900-c-k-c0x00ffffff-no-rj">
+                            @* There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                            for details on setting up this ASP.NET application to support logging in via external services. *@
                         </p>
                     </div>
                 }
